@@ -320,9 +320,10 @@ function pct(n) { return `${Math.round(n * 100)}%`; }
 // ── Main ──────────────────────────────────────────────────────
 
 async function main() {
+  const jsonMode = process.argv.includes('--json');
   const claudeDir = join(homedir(), '.claude');
 
-  process.stdout.write(`${C.dim}Scanning your Claude Code sessions...${C.reset}\n`);
+  if (!jsonMode) process.stdout.write(`${C.dim}Scanning your Claude Code sessions...${C.reset}\n`);
 
   const sessions = await scanSessions(claudeDir);
 
@@ -344,6 +345,35 @@ async function main() {
   stats.projectCount = projectCount;
 
   const archetype = getArchetype(stats);
+
+  // JSON output mode
+  if (jsonMode) {
+    const output = {
+      version: '1.0',
+      archetype: archetype.id,
+      archetypeName: archetype.name,
+      archetypeJp: archetype.jp || '',
+      tagline: archetype.tagline || '',
+      description: archetype.description || '',
+      stats: {
+        totalHours: Math.round(stats.totalHours * 10) / 10,
+        totalSessions: stats.totalSessions,
+        activeDays: stats.activeDays,
+        maxStreak: stats.maxStreak,
+        avgSessionMinutes: Math.round(stats.avgSessionHours * 60),
+        nightPct: Math.round(stats.nightPct * 100),
+        morningPct: Math.round(stats.morningPct * 100),
+        afternoonPct: Math.round(stats.afternoonPct * 100),
+        eveningPct: Math.round(stats.eveningPct * 100),
+        weekendRatio: Math.round(stats.weekendRatio * 10) / 10,
+        projectCount: stats.projectCount,
+      },
+      hourBuckets: stats.hourBuckets,
+      peakHour: stats.peakHour,
+    };
+    console.log(JSON.stringify(output, null, 2));
+    return;
+  }
 
   // Render
   const width = 52;
