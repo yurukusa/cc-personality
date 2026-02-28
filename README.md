@@ -78,6 +78,8 @@ The archetype tweet link is pre-formatted for easy sharing.
 
 For full usage statistics: [`cc-session-stats`](https://github.com/yurukusa/cc-session-stats)
 
+**→ [See all 27 cc-toolkit tools](https://yurukusa.github.io/cc-toolkit/)**
+
 ---
 
 ## Requirements
