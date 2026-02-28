@@ -4,6 +4,8 @@
 
 Diagnoses your coding archetype from real usage patterns in your session logs.
 
+**Try it in your browser:** [yurukusa.github.io/cc-personality](https://yurukusa.github.io/cc-personality/)
+
 ```
 npx cc-personality
 ```
@@ -57,6 +59,16 @@ Zero dependencies. Reads `~/.claude/projects/` locally. Nothing sent anywhere.
 ```
 
 ---
+
+## JSON output
+
+For the browser viewer or programmatic use:
+
+```
+npx cc-personality --json
+```
+
+Paste the output at [yurukusa.github.io/cc-personality](https://yurukusa.github.io/cc-personality/) to see your archetype card.
 
 ## How it works
 

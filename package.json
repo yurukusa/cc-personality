@@ -1,6 +1,6 @@
 {
   "name": "cc-personality",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Discover your Claude Code developer archetype. Diagnoses your coding style from real usage patterns.",
   "bin": {
     "cc-personality": "cli.mjs"
