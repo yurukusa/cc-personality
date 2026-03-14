@@ -427,6 +427,11 @@ async function main() {
   console.log(`  ${C.dim}https://x.com/intent/tweet?text=${shareText.substring(0, 80)}...${C.reset}`);
   console.log(`\n  Full stats: ${C.cyan}npx cc-session-stats${C.reset}`);
   console.log(`  GitHub: ${C.cyan}https://github.com/yurukusa/cc-personality${C.reset}\n`);
+
+  console.log();
+  console.log(`  ${C.dim}Running Claude Code autonomously? Check your safety score:${C.reset}`);
+  console.log(`  ${C.dim}npx cc-health-check${C.reset}`);
+  console.log(`  ${C.dim}Full production kit: https://yurukusa.gumroad.com/l/pkbbl?utm_source=npm&utm_medium=cli&utm_campaign=ops-kit${C.reset}`);
 }
 
 main().catch(err => {
