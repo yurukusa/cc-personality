@@ -82,6 +82,10 @@ For full usage statistics: [`cc-session-stats`](https://github.com/yurukusa/cc-s
 
 ---
 
+## Want to level up your Claude Code setup?
+
+**[Claude Code Ops Kit](https://yurukusa.github.io/cc-ops-kit-landing/?utm_source=github&utm_medium=readme&utm_campaign=cc-personality)** ($19) — 10 production hooks + 6 templates + 3 tools. Whatever archetype you are, these hooks keep your sessions safe.
+
 ## Requirements
 
 - Node.js 18+
